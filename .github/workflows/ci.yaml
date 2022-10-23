@@ -12,10 +12,9 @@ jobs:
         with:
           ruby-version: 2.7
           bundler-cache: true
-      - name: Fix permission
-        run: |
-          chmod a+x bin/*
       - name: build
-        run: script/bootstrap
+        run: |
+          chmod a+x script/bootstrap
+          script/bootstrap
       - name: test
         run: script/cibuild
